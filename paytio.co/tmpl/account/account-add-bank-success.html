@@ -1,0 +1,47 @@
+<ion-view title="Account page">     
+    
+
+	<section class="accaount-page bg-pur">
+			<div class="container">
+					<div class="row">
+							<div class="accaount-page__header">
+									<div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+											<h1>Hello, {{ info.first_name }}</h1>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+											<a ui-sref="account_send_money" class="btn send-money">Send money</a>
+									</div>
+							</div>
+					</div>
+					
+					<div class="accaount-page__main">
+							<exchange-rates trades="trades"></exchange-rates>
+							
+							<div class="block-container">
+									<div class="block-container__left">
+
+											<wallets-info currencies="currencies" trades="trades"></wallets-info>
+											
+											<bank-accounts-and-cards accounts="accounts"></bank-accounts-and-cards>
+											
+											<a href="" class="report-problem">Report a problem</a>
+									</div>
+									<div class="block-container__right">
+                    <div class="block-item">
+                        <div class="back"><a href="" ui-sref="account_activity">&lt; Recent Activity</a></div>
+                        <div class="block-container__right-inner">
+                            <h2>Well done</h2>
+                            <div class="sign">Your {{name}} bank has been added</div>
+                            <div class="light btn__big">
+                                <a class="btn2 btn2-inverse" ui-sref="account_dashboard">Back to dashboard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+							</div>
+							
+					</div>
+			</div>
+	</section>
+
+</ion-view>

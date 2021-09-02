@@ -1,0 +1,91 @@
+<ion-view title="Account page">     
+     
+       <section class="accaount-page bg-pur">
+            <div class="container">
+                <div class="row">
+                    <div class="accaount-page__header">
+                        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+                            <h1>Hello, {{ info.first_name }}</h1>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+                            <a ui-sref-active="active" ui-sref="account_send_money" ui-sref-opts="{reload: true}" class="btn send-money">Send money</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accaount-page__main">
+                    <exchange-rates trades="trades"></exchange-rates>
+                    
+                    <div class="block-container">
+                        <div class="block-container__left">
+
+														<wallets-info currencies="currencies" trades="trades"></wallets-info>
+														
+														<bank-accounts-and-cards accounts="accounts"></bank-accounts-and-cards>
+														
+                            <a href="" class="report-problem">Report a problem</a>
+                        </div>
+                        <div class="block-container__right">
+                            <div class="block-item">
+                                <div class="back"><a ui-sref="account_filled" href="">&lt; Recent Activity</a></div>
+                                <div class="block-container__right-inner">
+                                    <h2>Exchange funds</h2>
+                                    <div class="sign">Some very interesting description</div>
+                                    
+                                    <div class="form form-exchange">
+                                        <form>
+<!--{{currency.date.exchange[0]}}
+																						<select ng-change="myselect()"  name="date" id="" class="styled" ng-model="currency.date" 
+																						ng-options="option.currency for option in currency ">
+																																										
+																						</select>
+																						<select ng-model="currency.date2"  name="" id="" class="styled" ng-options="option for option in currency.date.exchange " >
+                                                             
+																							</select>
+-->
+																						<label>amount <span class="right">Max</span></label>
+                                            <div class="exchange-bl">
+                                                <div class="exchange-bl-but">
+                                                    <a class="exchange-but"></a>
+                                                </div>
+                                                <div class="exchange-bl-inp">
+                                                    <div class="exchange-bl-inp-line">
+                                                        <div class="dropdown-bl">
+                                                            <select  class="styled" ng-change="select(exchange.currency)" ng-model="exchange.currency" ng-options="item as item.currency for item in currency track by item.currency " ></select>
+                                                        </div>
+                                                        <div class="input-bl">
+                                                            <input type="text" class="" placeholder="1.00" ng-change="recalc(0)" ng-model="exchange.amount" />
+                                                        </div>
+                                                        <div class="clr"></div>
+                                                    </div>
+                                                    <div class="exchange-bl-inp-line">
+                                                        <div class="dropdown-bl to_currency">
+                                                            <select  class="styled" ng-model="exchange.to_currency"  ng-change="recalc()" ng-options="option for option in exchange.currency.exchange " ></select>
+                                                        </div>
+                                                        <div class="input-bl">
+                                                            <input type="text" class="inp-res" placeholder="1.00" ng-change="recalc(1)" ng-model="exchange.to_amount" />
+                                                        </div>
+                                                        <div class="clr"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="result-line">Fee <span class="right">{{ exchange.fee | number:8 | comma2decimal}}</span></div>
+                                            <div class="result-line">Total <span class="right">{{ exchange.total | number:8 | comma2decimal }}</span></div>
+                                            <hr/>
+                                            <div class="form-footer">
+                                                <div class="form-footer__item">
+                                                    <button  ng-click="submit()" class="btn">Exchange</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    
+</ion-view>

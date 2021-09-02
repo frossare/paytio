@@ -1,0 +1,58 @@
+<ion-view title="Account page">       
+    
+        <section class="accaount-page bg-pur">
+            <div class="container">
+                <div class="row">
+                    <div class="accaount-page__header">
+                        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+                            <h1>Hello, {{ info.first_name }}</h1>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+                            <a ui-sref="account_send_money" class="btn send-money">Send money</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accaount-page__main">
+                    <exchange-rates trades="trades"></exchange-rates>
+                    
+                    <div class="block-container">
+                        <div class="block-container__left">
+
+														<wallets-info currencies="currencies" trades="trades"></wallets-info>
+														
+														<bank-accounts-and-cards accounts="accounts"></bank-accounts-and-cards>
+														
+                            <a href="" class="report-problem">Report a problem</a>
+                        </div>
+                        <div class="block-container__right">
+                            <div class="block-item">
+                                <div class="back"><a ui-sref="account_filled" href="">&lt; Recent Activity</a></div>
+                                <div class="block-container__right-inner add-bank-acc">
+                                    <h2>Add Bank Account</h2>
+                                    <div class="sign">Used to buy and sell bitcoins - Worldwide</div>
+                                    <a ui-sref-active="active" ui-sref="account_link_bank" ui-sref-opts="{reload: true}" class="btn btn-inverse w-200">Add bank account</a>
+                                </div>
+                                <hr/>
+                                <div class="block-container__right-inner add-credit-card">
+                                    <h2>Add Credit Card</h2>
+                                    <div class="sign">Used as backup payment method - visa only</div>
+                                    <a class="btn btn-inverse w-200" ui-sref="account_link_credit_card">Add a credit card</a>
+                                </div>
+                                <hr/>
+                                <div class="block-container__right-inner common-questions">
+                                    <h3 class="bold">Common Questions</h3>
+                                    <ol class="semibold">
+                                        <li><a href="">How is my information protected?</a></li>
+                                        <li><a href="">I have a trouble adding card</a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    
+</ion-view>

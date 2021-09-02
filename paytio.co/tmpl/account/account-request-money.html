@@ -1,0 +1,149 @@
+<ion-view title="Account page">        
+    
+		<section class="accaount-page bg-pur">
+				<div class="container">
+						<div class="row">
+								<div class="accaount-page__header">
+										<div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+												<h1>Hello, {{ info.first_name }}</h1>
+										</div>
+										<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+												<a ui-sref="account_send_money" class="btn send-money">Send money</a>
+										</div>
+								</div>
+						</div>
+						
+						<div class="accaount-page__main">
+								<exchange-rates trades="trades"></exchange-rates>
+								
+								<div class="block-container">
+										<div class="block-container__left">
+
+												<wallets-info currencies="currencies" trades="trades"></wallets-info>
+												
+												<second-bank-accounts-and-cards></second-bank-accounts-and-cards>
+												
+												<a href="" class="report-problem">Report a problem</a>
+										</div>
+										<div class="block-container__right">
+												<div class="block-item">
+														<div class="back"><a href="">&lt; Recent Activity</a></div>
+														<div class="block-container__right-inner">
+																<h2>Request money</h2>
+																<div class="form">
+																		<div class="type__tabs">
+																				<ul class="type__tabs-items" id="type__tabs">
+																						<li class="active">
+																								<a href="#type_item_1">Fiat Money</a>
+																						</li>
+																						<li>
+																						<a href="#type_item_2">Cryptocurrency</a>
+																						</li>
+																				</ul>
+																				<div class="type__tabs-content">
+																						<div class="type__tabs-content_item" id="type_item_1">
+																								<div class="sign">Request money from anyone</div>
+																								<form action="" id="request__money_fiat form">
+																										<div class="input-line">
+																												<label>Request money from </label>
+																														<input type="text" name="" id="" class="" placeholder="Names, emails or numbers" />
+																										</div>
+																										<div class="exchange">
+																												<label>Amount</label>
+																												<div class="row">
+																														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																																<div class="input-line">
+																																		<div class="input-line__with-drop">
+																																				<div class="input-bl">
+																																						<input type="text" name="" id="" class="" placeholder="" value="0.00" />
+																																				</div>
+																																				<div class="dropdown-bl">
+																																						<select name="" id="" class="styled">
+																																								<option value="BTC">USD</option>
+																																						</select>
+																																				</div>
+																																				<div class="clr"></div>
+																																		</div>
+																																</div>
+																														</div>
+																												</div>
+																										</div>
+																										<div class="form-footer">
+																												<div class="form-footer__item">
+																														<button class="btn">send request</button>
+																												</div>
+																												<div class="form-footer__item">
+																														<a ui-sref="profile" class="btn-wo-styles">Cancel</a>
+																												</div>
+																										</div>
+																								</form>
+																						</div>
+																						<div class="type__tabs-content_item" id="type_item_2">
+																								<div class="sign">Request money from anyone</div>
+																								<form action="" id="request__money_crypto">
+																										<div class="input-line">
+																												<label>Request money from </label>
+																												<input type="text" name="" id="" class="" placeholder="Names, emails or numbers" />
+																										</div>
+																										<div class="exchange">
+																												<label>Amount</label>
+																												<div class="row">
+																														<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																																<div class="input-line">
+																																		<div class="input-line__with-drop">
+																																				<div class="input-bl">
+																																						<input type="text" name="" id="" class="" placeholder="" value="1.00" />
+																																				</div>
+																																				<div class="dropdown-bl">
+																																						<select name="" id="" class="styled">
+																																								<option value="BTC">BTC</option>
+																																								<option value="ETH">ETH</option>
+																																						</select>
+																																				</div>
+																																				<div class="clr"></div>
+																																		</div>
+																																</div>
+				<!--
+							<div class="equally-change">=</div>
+				-->																										
+																														</div>
+																														<!--
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+																																<div class="input-line input-line__units">
+																																		<div class="input-line__with-drop">
+																																				<div class="input-bl">
+																																						<input type="text" name="" id="" class="" placeholder="" value="3655.56" />
+																																				</div>
+																																				<div class="clr"></div>
+																																		</div>
+																																		<div class="units">USD</div>
+																																</div>
+																														</div>
+																														-->
+																														
+
+
+																												</div>
+																										</div>
+																										<div class="form-footer">
+																												<div class="form-footer__item">
+																														<button ui-sref="profile" class="btn">send request</button>
+																												</div>
+																												<div class="form-footer__item">
+																														<a ui-sref="profile" class="btn-wo-styles">Cancel</a>
+																												</div>
+																										</div>
+																								</form>
+																						</div>
+																				</div>
+																		</div>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
+
+</ion-view>

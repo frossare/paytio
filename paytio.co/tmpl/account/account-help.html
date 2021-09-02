@@ -1,0 +1,75 @@
+<ion-view title="Account page">
+
+	<section class="accaount-page bg-pur">
+		<div class="container">
+			<div class="row">
+				<div class="accaount-page__header">
+					<div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+						<h1>Hello, {{ info.first_name }}</h1>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="accaount-page__main">
+
+				<div class="block-container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="block-item">
+								<h3>How can we help you?</h3>
+								<div class="sign">Fill the form to ger help from us</div>
+
+								<div class="form">
+									<form>
+										<div class="input-line">
+											<label>Subject</label>
+											<input ng-model="ticket.subject" type="text">
+											<div ng-show="subjectStatus" class="error-message">The subject must be at least 8 characters.</div>
+										</div>
+										<div class="input-line">
+											<label>Topic</label>
+											<select ng-model="ticket.category_id" name="" class="styled">
+												<option ng-value="options.id" ng-repeat="options  in ticketsCategories">{{options.name}}</option>
+
+											</select>
+										</div>
+										<div class="input-line">
+											<label>Describe your problem</label>
+											<textarea ng-model="ticket.content" class="" placeholder="Your problem"></textarea>
+											<div ng-show="contentStatus" class="error-message">The content must be at least 24 characters..</div>
+										</div>
+
+										<a ng-click="submit()" class="btn send-money">Send ticket</a>
+
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<div class="block-item">
+								<h3>Tips</h3>
+								<ol class="semibold">
+									<li>
+										<a href="">How to add funds?</a>
+									</li>
+									<li>
+										<a href="">How to withdraw funds?</a>
+									</li>
+									<li>
+										<a href="">Report a problem</a>
+									</li>
+									<li>
+										<a href="">Fees</a>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</ion-view>

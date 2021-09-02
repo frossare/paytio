@@ -1,0 +1,245 @@
+<ion-view title="Account page">       
+    
+        <section class="accaount-page bg-pur">
+            <div class="container">
+                <div class="row">
+                    <div class="accaount-page__header">
+                        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+                            <h1>Hello, {{ info.first_name }} {{ }}</h1>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+                            <a ui-sref="account_send_money" class="btn send-money">Send money</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accaount-page__main">
+                    <exchange-rates trades="trades"></exchange-rates>
+                    
+                    <div class="block-container">
+                        <div class="block-container__left">
+
+														<wallets-info currencies="currencies" trades="trades"></wallets-info>
+														
+														<bank-accounts-and-cards accounts="accounts"></bank-accounts-and-cards>
+														
+                            <a href="" class="report-problem">Report a problem</a>
+                        </div>
+                        <div class="block-container__right">
+                            <div class="block-item">
+																<h3>Recent Activity
+																<a ng-click="transAll()" href="" class="more__info">More</a>
+															</h3>
+
+																<div class="activity">
+																		<div class="activity__wrap">
+																			<div ng-repeat =" trans in transactions ">
+
+																			<!--transfer to ...   -->
+																				<div ng-if="trans.type=='Transfer' && info.id==trans.initiator_id" class="activity__item">
+																				<div class="activity__item-visible">
+																						<div class="activity__item-left">
+																								<div class="activity__item-date">
+																										<p>{{ trans.dateMonth}}</p>
+																										<span>{{ trans.dateDate}}</span>
+																								</div>
+																								<div class="activity__item-desc">
+																										<div class="activity__item-desc_top">
+																												Transfer to {{trans.details[2].recipient.first_name}}
+																										</div>
+																										<div class="activity__item-desc_middle">
+																												<span ng-if="trans.ConvStatus=='Pending'">Pending</span>
+																												<p>{{trans.details[0].recipient.email}}</p>
+																										</div>
+																										<div  class="activity__item-desc_bottom">
+																												<ul ng-if="trans.ConvStatus=='Pending'" class="activity__item-action">
+																														<li>
+																																<a href="#">Send a reminder</a>
+																														</li>
+																														<li>
+																																<a href="#">Edit amount</a>
+																														</li>
+																														<li>
+																																<a href="#">Cancel</a>
+																														</li>
+																												</ul>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="activity__item-right">
+																								<div class="activity__item-right_arrow">
+				
+																								</div>
+																								<div class="activity__item-value">
+																										<span class="activity__item-value_remove">-</span> {{trans.amount}} {{trans.info.currency}}
+																								</div>
+																						</div>
+																				</div>
+																				<div class="activity__item-hidden">
+																						<span>Transaction ID</span>
+																						<p>{{trans.tid}}</p>
+																						<a href="#">Print details</a>
+																				</div>
+																		</div>
+																		<!--Exchange ...   -->
+																				<div ng-if="trans.type=='Exchange'" class="activity__item">
+																						<div class="activity__item-visible">
+																								<div class="activity__item-left">
+																										<div class="activity__item-date">
+																												<p>{{ trans.dateMonth}}</p>
+																										<span>{{ trans.dateDate}}</span>
+																										</div>
+																										<div class="activity__item-desc">
+																												<div class="activity__item-desc_top">
+																														Changing currency
+																												</div>
+																												<div class="activity__item-desc_middle">
+																														<span ng-if="trans.ConvStatus=='Pending'">Pending</span>
+																														<p>{{trans.info.currency}} to {{trans.info.to_currency}}</p>
+																												</div>
+																												<div  class="activity__item-desc_bottom">
+																														<ul ng-if="trans.ConvStatus=='Pending'" class="activity__item-action">
+																																<li>
+																																		<a href="#">Send a reminder</a>
+																																</li>
+																																<li>
+																																		<a href="#">Edit amount</a>
+																																</li>
+																																<li>
+																																		<a href="#">Cancel</a>
+																																</li>
+																														</ul>
+																												</div>
+																										</div>
+																								</div>
+																								<div class="activity__item-right">
+																										<div class="activity__item-right_arrow">
+				
+																										</div>
+																										<div class="activity__item-value">
+																												<a href="#" class="activity__item-update">
+																														<img src="images/ico-26.png" alt="">
+																												</a>
+																												{{trans.amount}} {{trans.info.currency}}
+																										</div>
+																										<div class="activity__item-money">
+																												<span ng-if="trans.type=='Exchange' && trans.info.to_currency =='USD'" class="card-operation-sum-transfer">{{trans.amount*trans.info.price | number:2 | comma2decimal}} {{trans.info.to_currency}}</span>
+																												<span ng-if="trans.type=='Exchange' && trans.info.to_currency !='USD'" class="card-operation-sum-transfer">{{trans.amount*trans.info.price | number:8 | comma2decimal}} {{trans.info.to_currency}}</span>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="activity__item-hidden">
+																								<span>Transaction ID</span>
+																								<p>{{trans.tid}}</p>
+																								<a href="#">Print details</a>
+																						</div>
+																				</div>
+																				<!-- transfer from  -->
+																				<div ng-if="trans.type=='Transfer' && info.id!=trans.initiator_id" class="activity__item">
+																						<div class="activity__item-visible">
+																								<div class="activity__item-left">
+																										<div class="activity__item-date">
+																												<p>{{ trans.dateMonth}}</p>
+																												<span>{{ trans.dateDate}}</span>
+																										</div>
+																										<div class="activity__item-desc">
+																												<div class="activity__item-desc_top">
+																														admin@gmail.com
+																												</div>
+																												<div class="activity__item-desc_middle">
+																														<span ng-if="trans.ConvStatus=='Pending'">Pending</span>
+																														<p>Request Sent</p>
+																												</div>
+																												<div  class="activity__item-desc_bottom">
+																														<ul ng-if="trans.ConvStatus=='Pending'" class="activity__item-action">
+																																<li>
+																																		<a href="#">Send a reminder</a>
+																																</li>
+																																<li>
+																																		<a href="#">Edit amount</a>
+																																</li>
+																																<li>
+																																		<a href="#">Cancel</a>
+																																</li>
+																														</ul>
+																												</div>
+																										</div>
+																								</div>
+																								<div class="activity__item-right">
+																										<div class="activity__item-right_arrow">
+				
+																										</div>
+																										<div class="activity__item-value">
+																												<span class="activity__item-value_add">+</span> 0.50 $
+																										</div>
+																								</div>
+																						</div>
+																						<div class="activity__item-hidden">
+																								<span>Transaction ID</span>
+																								<p>{{trans.tid}}</p>
+																								<a href="#">Print details</a>
+																						</div>
+																				</div>
+																				<!--  Withdraw to -->
+																				<div ng-if="trans.type=='Withdraw'" class="activity__item">
+																						<div class="activity__item-visible">
+																								<div class="activity__item-left">
+																										<div class="activity__item-date">
+																												<p>{{ trans.dateMonth}}</p>
+																												<span>{{ trans.dateDate}}</span>
+																										</div>
+																										<div class="activity__item-desc">
+																												<div class="activity__item-desc_top">
+																														Withdraw to 
+																												</div>
+																												<div class="activity__item-desc_middle">
+																														<span ng-if="trans.ConvStatus=='Pending'">Pending</span>
+																														<p>{{trans.info.transAccount}}</p>
+																												</div>
+																												<div  class="activity__item-desc_bottom">
+																														<ul ng-if="trans.ConvStatus=='Pending'" class="activity__item-action">
+																																<li>
+																																		<a href="#">Send a reminder</a>
+																																</li>
+																																<li>
+																																		<a href="#">Edit amount</a>
+																																</li>
+																																<li>
+																																		<a href="#">Cancel</a>
+																																</li>
+																														</ul>
+																												</div>
+																										</div>
+																								</div>
+																								<div class="activity__item-right">
+																										<div class="activity__item-right_arrow">
+				
+																										</div>
+																										<div class="activity__item-value">
+																												<span class="activity__item-value_remove">-</span> 0.50 ETH
+																										</div>
+																								</div>
+																						</div>
+																						<div class="activity__item-hidden">
+																								<span>Transaction ID</span>
+																								<p>{{trans.tid}}</p>
+																								<a href="#">Print details</a>
+																						</div>
+																				</div>
+
+																			</div>
+																		</div>
+																</div>
+																
+																
+																
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    
+</ion-view>  
+  

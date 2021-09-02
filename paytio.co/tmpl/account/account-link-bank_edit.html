@@ -1,0 +1,100 @@
+<ion-view title="Account page">        
+    
+        <section class="accaount-page bg-pur">
+            <div class="container">
+                <div class="row">
+                    <div class="accaount-page__header">
+                        <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+                            <h1>Hello, {{ info.first_name }}</h1>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+                            <a ui-sref="account_send_money" class="btn send-money">Send money</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accaount-page__main">
+                    <exchange-rates trades="trades"></exchange-rates>
+                    
+                    <div class="block-container">
+                        <div class="block-container__left">
+
+														<wallets-info currencies="currencies" trades="trades"></wallets-info>
+														
+														<second-bank-accounts-and-cards></second-bank-accounts-and-cards>
+														
+														<a href="" class="report-problem">Report a problem</a>
+												</div>
+                        <div class="block-container__right">
+                            <div class="block-item">
+                                <div class="back"><a href="">&lt; Recent Activity</a></div>
+                                <div class="block-container__right-inner">
+                                    <h2>Edite Bank Account</h2>
+                                    <div class="sign">Used to buy and sell bitcoins - Worldwide </div>
+                                    
+                                    <div class="form" ng-submit="submit()" ng-controller="Account_link_bank_editCtrl" name="LoginForm">
+                                        <form>
+                                            <div class="input-line">
+                                                <label>Benefeiciary Details</label>
+                                                <select my-select name="" id="" class="styled">
+                                                    <option value="Benefeciary Country">Benefeciary Country</option>
+                                                    <option value="Available Etherium: 3 ETH">Available Etherium: 3 ETH</option>
+                                                    <option value="Available Litecoin: 1.54 LTC">Available Litecoin: 1.54 LTC</option>
+                                                </select>
+                                            </div>
+
+                                           
+
+                                            <div class="input-line">
+                                                <label>Benefeiciary name</label>
+                                                <input ng-model="account.account_name" type="text" name="" id="" class="" placeholder="Benefeciary Name" />
+                                            </div>
+                                            <div class="input-line">
+                                                <label>BIC or Account Number</label>
+                                                <input ng-model="account.account_number" type="text" name="" id="" class="" placeholder="xxxxxxxxx" />
+                                            </div>
+                                            <hr/>
+                                            <div class="input-line">
+                                                <label>Bank Details</label>
+                                                <select my-select ng-model="account.bank_country" name="" id="" class="styled">
+                                                    <option value="Bank Country">Bank Country</option>
+                                                    <option value="Bank Country2">Bank Country2</option>
+                                                    <option value="Bank Country3">Bank Country3</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-line">
+                                                <label>Bank name</label>
+                                                <input ng-model="account.bank_name" type="text" name="" id="" class="" placeholder="Bank name"  />
+                                            </div>
+                                            <div class="input-line">
+                                                <label>SWift/bic</label>
+                                                <input ng-model="account.swift" type="text" name="" id="" class="" placeholder="xxxxxxxxx"  />
+                                            </div>
+                                            <div class="input-line">
+                                                <label>Banr city</label>
+                                                <input ng-model="account.bank_city" type="text" name="" id="" class="" placeholder="xxxxxxxxx" />
+                                            </div>
+                                            <div class="input-line">
+                                                <label>Banr address</label>
+                                                <input ng-model="account.bank_address" type="text" name="" id="" class="" placeholder="xxxxxxxxx" />
+                                            </div>
+                                            
+                                            <div class="form-footer">
+                                                <div class="form-footer__item">
+                                                    <button class="btn ">Apply</button>
+                                                </div>
+                                                <div class="form-footer__item">
+                                                    <a ui-sref="profile" class="btn-wo-styles">Cancel</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+</ion-view>

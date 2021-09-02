@@ -1,0 +1,81 @@
+<ion-view title="Account page">   
+	
+		<section class="accaount-page">
+				<div class="container">
+						<div class="row">
+								<div class="accaount-page__header">
+										<div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+												<h1>Hello, {{ info.first_name }}</h1>
+										</div>
+										<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+												<a class="btn send-money">Send money</a>
+										</div>
+								</div>
+						</div>
+		
+						<div class="accaount-page__main">
+								<exchange-rates trades="trades"></exchange-rates>
+		
+								<div class="block-container">
+										<div class="block-container__left">
+
+												<wallets-info currencies="currencies" trades="trades"></wallets-info>
+												
+												<bank-accounts-and-cards accounts="accounts"></bank-accounts-and-cards>
+												
+												<a href="" class="report-problem">Report a problem</a>
+										</div>
+										<div class="block-container__right">
+												<div class="block-item">
+														<div class="back"><a href="">&lt; Recent Activity</a></div>
+														<div class="block-container__right-inner">
+																<h2>Link credit card</h2>
+																<div class="sign">Used to buy and sell bitcoins - Worldwide</div>
+		
+																<div class="form">
+																		<form>
+																				<div class="input-line">
+																						<label>card number*</label>
+																						<input type="text" name="" id="" class="card-numb" placeholder="xxxx - xxxxx - xxxx - xxxx"/>
+																				</div>
+																				<div class="input-line">
+																						<label>Cardholder name*</label>
+																						<input type="text" name="" id="" class="" placeholder="Enter your full name"/>
+																				</div>
+																				<div class="input-line__group">
+																						<div class="input-line__group-left">
+																								<div class="input-line input-line__xs">
+																										<label>expiration date*</label>
+																										<input type="text" name="" id="" class="" placeholder="MM"/>
+																								</div>
+																								<div class="input-line input-line__xs">
+																										<input type="text" name="" id="" class="" placeholder="YY"/>
+																								</div>
+																						</div>
+																						<div class="input-line__group-right">
+																								<div class="input-line input-line__sm">
+																										<label>Security code*</label>
+																										<input type="text" name="" id="" class="" placeholder="CVV/CVC"/>
+																								</div>
+																						</div>
+																				</div>
+																				<div class="form-footer">
+																						<div class="form-footer__item">
+																								<a ui-sref="profile" class="btn">Link new card</a>
+																						</div>
+																						<div class="form-footer__item">
+																								<a ui-sref="profile" class="btn-wo-styles">Cancel</a>
+																						</div>
+																				</div>
+																		</form>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+		
+						</div>
+				</div>
+		</section>
+
+</ion-view>

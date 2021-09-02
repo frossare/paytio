@@ -1,0 +1,268 @@
+<ion-view title="Account page">        
+    
+	<section class="accaount-page bg-pur">
+			<div class="container">
+					<div class="row">
+							<div class="accaount-page__header">
+									<div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+											<h1>Hello, {{ info.first_name }}</h1>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+											<a ui-sref="account_send_money" class="btn send-money">Send money</a>
+									</div>
+							</div>
+					</div>
+					
+					<div class="accaount-page__main">
+						
+							<exchange-rates trades="trades"></exchange-rates>
+							
+							<div class="block-container">
+									<div class="block-container__left">
+
+											<wallets-info currencies="currencies" trades="trades"></wallets-info>
+											
+											<second-bank-accounts-and-cards></second-bank-accounts-and-cards>
+											
+											<a href="" class="report-problem">Report a problem</a>
+									</div>
+									<div class="block-container__right">
+                    <div class="block-item">
+                        <div class="back"><a href="">&lt; Recent Activity</a></div>
+                        <div class="block-container__right-inner">
+                            <h2>Add funds</h2>
+                            <div class="form">
+                                <div class="type__tabs">
+                                    <ul class="type__tabs-items" id="type__tabs">
+                                        <li class="active">
+                                            <a href="">Fiat Money</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Cryptocurrency</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Bank transfer</a>
+                                        </li>
+                                    </ul>
+                                    <div class="type__tabs-content">
+                                        <div class="type__tabs-content_item" id="type_item_1">
+                                            <div class="sign">Add funds easily to your wallet via bank account</div>
+                                            <form action="" id="add__money_fiat" class="add__money_fiat form">
+                                                <div class="input-line">
+                                                    <label>Choose wallet <a href="">Add new wallet </a></label>
+                                                    <select name="" id="" class="styled">
+                                                        <option value="Available Bitcoin: 5 BTC">0.98 USD</option>
+                                                        <option value="Available Etherium: 3 ETH">0.938 USD</option>
+                                                        <option value="Available Litecoin: 1.54 LTC">0.948 USD</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input-line col-lg-6 col-md-12">
+                                                    <label>amount*</label>
+                                                    <input type="text" name="" id="" class="" placeholder="0.00"/>
+                                                </div>
+                                                <hr>
+                                                <h6>Choose payment method</h6>
+                                                <div class="input__radio">
+                                                    <div class="input__radio-item">
+                                                        <input type="radio" name="add__funds_select_cards" value="visa" id="add__funds_select_cards_1" >
+                                                        <label for="add__funds_select_cards_1">
+                                                            <span>Visa Card **** 5678</span>
+                                                        </label>
+                                                    </div>
+                                                    <div class="input__radio-item">
+                                                        <input type="radio" name="add__funds_select_cards" value="another" id="add__funds_select_cards_2" >
+                                                        <label for="add__funds_select_cards_2">
+                                                            <span>Other payment methods</span>
+                                                            <img src="images/pay.png" alt="" title="">
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="add__funds-visa add__funds-method" id="add__funds-visa">
+                                                    <h6>Pay by credit card</h6>
+                                                    <div class="input-line">
+                                                        <label>card number*</label>
+                                                        <input type="text" name="" id="" class="card-numb"
+                                                               placeholder="xxxx - xxxxx - xxxx - xxxx"/>
+                                                    </div>
+                                                    <div class="input-line">
+                                                        <label>Cardholder name*</label>
+                                                        <input type="text" name="" id="" class=""
+                                                               placeholder="Enter your full name"/>
+                                                    </div>
+                                                    <div class="input-line__group">
+                                                        <div class="input-line__group-left">
+                                                            <div class="input-line input-line__xs">
+                                                                <label>expiration date*</label>
+                                                                <input type="text" name="" id="" class="" placeholder="MM"/>
+                                                            </div>
+                                                            <div class="input-line input-line__xs">
+                                                                <input type="text" name="" id="" class="" placeholder="YY"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-line__group-right">
+                                                            <div class="input-line input-line__sm">
+                                                                <label>Security code*</label>
+                                                                <input type="text" name="" id="" class=""
+                                                                       placeholder="CVV/CVC"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="add__funds-another add__funds-method" id="add__funds-another">
+                                                    <h6>Enter card details</h6>
+                                                    <div class="input-line">
+                                                        <label>card number*</label>
+                                                        <input type="text" name="" id="" class="card-numb"
+                                                               placeholder="xxxx - xxxxx - xxxx - xxxx"/>
+                                                    </div>
+                                                    <div class="input-line">
+                                                        <label>Cardholder name*</label>
+                                                        <input type="text" name="" id="" class=""
+                                                               placeholder="Enter your full name"/>
+                                                    </div>
+                                                    <div class="input-line__group">
+                                                        <div class="input-line__group-left">
+                                                            <div class="input-line input-line__xs">
+                                                                <label>expiration date*</label>
+                                                                <input type="text" name="" id="" class="" placeholder="MM"/>
+                                                            </div>
+                                                            <div class="input-line input-line__xs">
+                                                                <input type="text" name="" id="" class="" placeholder="YY"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="input-line__group-right">
+                                                            <div class="input-line input-line__sm">
+                                                                <label>Security code*</label>
+                                                                <input type="text" name="" id="" class=""
+                                                                       placeholder="CVV/CVC"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="add__funds-bottom">
+                                                    <div class="input-line">
+                                                        <div class="checkbox__line">
+                                                            <input type="checkbox" name="ch1" id="ch1" class=""
+                                                                   value="save_future">
+                                                            <label for="ch1"><span>Save for future</span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-footer">
+                                                        <div class="form-footer__item">
+                                                            <button class="btn">confirm & pay</button>
+                                                        </div>
+                                                        <div class="form-footer__item">
+                                                            <a class="btn-wo-styles">Keep my balance</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="type__tabs-content_item" id="type_item_2">
+                                            <div class="sign">Request money from anyone</div>
+                                            <form action="" id="add__money_crypto">
+                                                <div class="input-line">
+                                                    <label>Choose wallet <a href="">Add new wallet </a></label>
+                                                    <select name="" id="" class="styled">
+                                                        <option value="Available Bitcoin: 5 BTC">0.98 USD</option>
+                                                        <option value="Available Etherium: 3 ETH">0.938 USD</option>
+                                                        <option value="Available Litecoin: 1.54 LTC">0.948 USD</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input-line">
+                                                    <label>COPY THIS PRIVATE URL TO SHARE</label>
+                                                    <input type="text" name="" id="" class="input__focus" readonly
+                                                           value="bitcoin:1JbKb7fIjjlLlLLlKhvgVFegehsFcyfvIHBi..."/>
+                                                    <button class="copy__btn">COPY</button>
+                                                </div>
+                                                <div class="popup__details-qr">
+                                                    <div class="form__title_qr">
+                                                        <p>Scan qr code</p>
+                                                        <a class="dropdown-toggle" href="" role="button"
+                                                           id="dropdownInfoQr"
+                                                           data-toggle="dropdown" aria-haspopup="true"
+                                                           aria-expanded="false">
+                                                            <span>?</span>
+                                                        </a>
+                                                        <div class="dropdown-menu info-drop"
+                                                             aria-labelledby="dropdownInfoQr">
+                                                            <p>Crypto Wallet - All cryptocurrencies will be stored here,
+                                                                and you can
+                                                                send it everywhere and spend how you want. You can
+                                                                withdraw it on
+                                                                another digital wallet. But if you want withdraw real
+                                                                money, you need to
+                                                                exchange it.</p>
+                                                            <p>Fiat Wallet - Wallet with real money, you can withdraw it
+                                                                on your bank
+                                                                account or you can buy cryptocureencies for that
+                                                                money.</p>
+                                                        </div>
+                                                    </div>
+                                                    <img src="images/QR-code.jpg" alt="QR">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="type__tabs-content_item" id="type_item_3">
+                                            <div class="sign">Request money from anyone</div>
+                                            <form action="" id="add__money_bank">
+                                                <div class="input-line">
+                                                    <label>Choose wallet <a href="">Add new wallet </a></label>
+                                                    <select name="" id="" class="styled">
+                                                        <option value="Available Bitcoin: 5 BTC">0.98 USD</option>
+                                                        <option value="Available Etherium: 3 ETH">0.938 USD</option>
+                                                        <option value="Available Litecoin: 1.54 LTC">0.948 USD</option>
+                                                    </select>
+                                                </div>
+                                                <div class="table__bank-transfer">
+                                                    <table>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>recipient</td>
+                                                                <td>John Doe</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>address of the recipient</td>
+                                                                <td>Suite 2, 5 st. Vincent Street, Scotland, United kingdom, EH3 6SW</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>beneficiary's account</td>
+                                                                <td>LV16LATB0006020244000 (USD)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>swift</td>
+                                                                <td>LATB LV 22</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>payee's bank</td>
+                                                                <td>AS NORVIK BANKA</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>beneficiary's bank address</td>
+                                                                <td>11 Raina boulevard, Riga, Latvia, LV. -1010</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>description</td>
+                                                                <td>FACTT1M3AHJEEMR</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="print__detail">
+                                                    <a href="">Print details</a>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+							</div>
+					</div>
+			</div>
+	</section>
+
+</ion-view>

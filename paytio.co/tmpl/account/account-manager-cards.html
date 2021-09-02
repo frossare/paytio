@@ -1,0 +1,182 @@
+<ion-view title="Account page">    
+
+		<section class="accaount-page bg-pur">
+				<div class="container">
+						<div class="row">
+								<div class="accaount-page__header">
+										<div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+												<h1>Hello, {{ info.first_name }}</h1>
+										</div>
+										<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+												<a class="btn send-money">Send money</a>
+										</div>
+								</div>
+						</div>
+		
+						<div class="accaount-page__main">
+								<exchange-rates trades="trades"></exchange-rates>
+		
+								<div class="block-container">
+										<div class="block-container__left">
+
+												<wallets-info currencies="currencies" trades="trades"></wallets-info>
+												
+												<bank-accounts-and-cards accounts="accounts"></bank-accounts-and-cards>
+												
+												<a href="" class="report-problem">Report a problem</a>
+										</div>
+										<div class="block-container__right">
+												<div class="block-item">
+														<div class="back"><a href="" ui-sref="account_activity">&lt; Recent Activity</a></div>
+														<div class="block-container__right-inner" >
+																<h2>Manage bank accounts and cards</h2>
+																<div class="sign">Some interesting description</div>
+																<div class="manage">
+																		<div class="manage__row">
+
+																				<div ng-repeat =" acc in accounts" class="manage__item manage__bank">
+																						<div class="manage__bank-top">
+																								<div class="manage__bank-left">
+																										<div class="manage__bank-title">
+																												{{acc.bank_name}} 
+																										</div>
+																										<div class="manage__bank-desc">
+																												Savings accounts
+																										</div>
+																								</div>
+																								<div class="manage__bank-right">
+																										<div class="account-item__amount-right">
+																												<div class="account-item__amount-more" id="dropdownManage_1" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																														<svg aria-hidden="true" data-prefix="far" data-icon="ellipsis-v" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" class="svg-inline--fa fa-ellipsis-v fa-w-4">
+																																<path d="M64 208c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48 21.5-48 48-48zM16 104c0 26.5 21.5 48 48 48s48-21.5 48-48-21.5-48-48-48-48 21.5-48 48zm0 304c0 26.5 21.5 48 48 48s48-21.5 48-48-21.5-48-48-48-48 21.5-48 48z" class=""></path>
+																														</svg>
+																												</div>
+																												<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownManage_1">
+																														<a class="dropdown-item wallet__details" href="" ui-sref="account_link_bank_edit ({id :acc.id})" >
+																																Edit details
+																														</a>
+																														<a class="dropdown-item" href="" ui-sref="account_remove_bank ({id :acc.id})">
+																																Remove card
+																														</a>
+																												</div>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="manage__bank-bottom">
+																								<div class="manage__bank-number">
+																										xxxxxxx - {{acc.account_number.slice(-4)}}
+																								</div>
+																								<div class="manage__bank-ico">
+																										<img src="images/ico-23.png" alt="" title="">
+																								</div>
+																						</div>
+																				</div>
+
+																				
+																				<a href="#" class="manage__item manage__bank manage__add" ui-sref="account_link_bank">
+																						<div class="manage__add-item">
+																								<span>+</span>
+																								<p>Link a bank account</p>
+																						</div>
+																				</a>
+																		</div>
+																		<hr>
+																		<div class="manage__row manage__pt">
+																				<div class="manage__item manage__card">
+																						<div class="manage__card-top">
+																								<div class="manage__card-label">
+																										Active
+																								</div>
+																								<div class="manage__card-action">
+																										<div class="account-item__amount-right">
+																												<div class="account-item__amount-more" id="dropdownCard_2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																														<svg aria-hidden="true" data-prefix="far" data-icon="ellipsis-v" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" class="svg-inline--fa fa-ellipsis-v fa-w-4">
+																																<path d="M64 208c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48 21.5-48 48-48zM16 104c0 26.5 21.5 48 48 48s48-21.5 48-48-21.5-48-48-48-48 21.5-48 48zm0 304c0 26.5 21.5 48 48 48s48-21.5 48-48-21.5-48-48-48-48 21.5-48 48z" class=""></path>
+																														</svg>
+																												</div>
+																												<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownCard_2">
+																														<a class="dropdown-item wallet__details" href="#">
+																																Edit details
+																														</a>
+																														<a class="dropdown-item" href="#">
+																																Remove card
+																														</a>
+																												</div>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="manage__card-middle">
+																								<div class="manage__card-number">
+																										xxxx xxxx xxxx 5673
+																								</div>
+																						</div>
+																						<div class="manage__card-bottom">
+																								<div class="manage__card-name">
+																										Customer
+																								</div>
+																								<div class="manage__card-date">
+																										16/21
+																								</div>
+																								<div class="manage__card-icon">
+																										<img src="images/visa-label.jpg" alt="visa_ico">
+																								</div>
+																						</div>
+																				</div>
+																				<div class="manage__item manage__card">
+																						<div class="manage__card-top">
+																								<div class="manage__card-label">
+																										Active
+																								</div>
+																								<div class="manage__card-action">
+																										<div class="account-item__amount-right">
+																												<div class="account-item__amount-more" id="dropdownCard_1" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																														<svg aria-hidden="true" data-prefix="far" data-icon="ellipsis-v" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512" class="svg-inline--fa fa-ellipsis-v fa-w-4">
+																																<path d="M64 208c26.5 0 48 21.5 48 48s-21.5 48-48 48-48-21.5-48-48 21.5-48 48-48zM16 104c0 26.5 21.5 48 48 48s48-21.5 48-48-21.5-48-48-48-48 21.5-48 48zm0 304c0 26.5 21.5 48 48 48s48-21.5 48-48-21.5-48-48-48-48 21.5-48 48z" class=""></path>
+																														</svg>
+																												</div>
+																												<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownCard_1">
+																														<a class="dropdown-item wallet__details" href="#">
+																																Edit details
+																														</a>
+																														<a class="dropdown-item" href="#">
+																																Remove card
+																														</a>
+																												</div>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="manage__card-middle">
+																								<div class="manage__card-number">
+																										xxxx xxxx xxxx 5673
+																								</div>
+																						</div>
+																						<div class="manage__card-bottom">
+																								<div class="manage__card-name">
+																										Customer
+																								</div>
+																								<div class="manage__card-date">
+																										16/21
+																								</div>
+																								<div class="manage__card-icon">
+																										<img src="images/visa-label.jpg" alt="visa_ico">
+																								</div>
+																						</div>
+																				</div>
+																				<a href="" class="manage__item manage__card manage__add" ui-sref="account_link_credit_card">
+																						<div class="manage__add-item">
+																								<span>+</span>
+																								<p>Link a bank account</p>
+																						</div>
+																				</a>
+																		</div>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
+		
+						</div>
+				</div>
+		</section>
+
+</ion-view>
